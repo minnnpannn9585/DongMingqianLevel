@@ -1,4 +1,7 @@
-﻿ using UnityEngine;
+﻿ using System;
+ using System.Collections;
+ using UnityEngine;
+ using Random = UnityEngine.Random;
 #if ENABLE_INPUT_SYSTEM 
 using UnityEngine.InputSystem;
 #endif
@@ -14,6 +17,9 @@ namespace StarterAssets
 #endif
     public class ThirdPersonController : MonoBehaviour
     {
+        private int jumpCount = 0;
+        private bool bounce = false;
+            
         [Header("Player")]
         [Tooltip("Move speed of the character in m/s")]
         public float MoveSpeed = 2.0f;
@@ -182,6 +188,10 @@ namespace StarterAssets
                 transform.position.z);
             Grounded = Physics.CheckSphere(spherePosition, GroundedRadius, GroundLayers,
                 QueryTriggerInteraction.Ignore);
+            if (Grounded)
+            {
+                jumpCount = 0;
+            }
 
             // update animator if using character
             if (_hasAnimator)
@@ -281,6 +291,11 @@ namespace StarterAssets
 
         private void JumpAndGravity()
         {
+            if (bounce)
+            {
+                //return;
+            }
+            
             if (Grounded)
             {
                 // reset the fall timeout timer
@@ -302,6 +317,8 @@ namespace StarterAssets
                 // Jump
                 if (_input.jump && _jumpTimeoutDelta <= 0.0f)
                 {
+                    //print(jumpCount);
+                    jumpCount++;
                     // the square root of H * -2 * G = how much velocity needed to reach desired height
                     _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
 
@@ -320,6 +337,20 @@ namespace StarterAssets
             }
             else
             {
+                if (_input.jump && jumpCount <=2)
+                {
+                    print(jumpCount);
+                    jumpCount++;
+                    // the square root of H * -2 * G = how much velocity needed to reach desired height
+                    _verticalVelocity = Mathf.Sqrt(JumpHeight * -4f * Gravity);
+
+                    // update animator if using character
+                    if (_hasAnimator)
+                    {
+                        _animator.SetBool(_animIDJump, true);
+                    }
+                }
+                
                 // reset the jump timeout timer
                 _jumpTimeoutDelta = JumpTimeout;
 
@@ -346,6 +377,24 @@ namespace StarterAssets
             {
                 _verticalVelocity += Gravity * Time.deltaTime;
             }
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.tag == "Bounce")
+            {
+                //bounce = true;
+                StartCoroutine(BounceSet());
+                
+                //print(jumpCount);
+                _verticalVelocity = Mathf.Sqrt(JumpHeight * -8f * Gravity);
+            }
+        }
+
+        IEnumerator BounceSet()
+        {
+            yield return new WaitForSeconds(0.2f);
+            jumpCount = 3;
         }
 
         private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
