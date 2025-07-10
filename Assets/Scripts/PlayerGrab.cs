@@ -7,6 +7,7 @@ public class PlayerGrab : MonoBehaviour
 {
     public bool getBattery = false;
     public bool insideCarArea = false;
+   
     
     private void OnTriggerEnter(Collider other)
     {
@@ -26,7 +27,8 @@ public class PlayerGrab : MonoBehaviour
     {
         if (other.tag == "Car")
         {
-            insideCarArea = false;
+            insideCarA  rea = false;
         }
     }
+
 }
