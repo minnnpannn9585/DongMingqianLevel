@@ -27,7 +27,7 @@ public class PlayerGrab : MonoBehaviour
     {
         if (other.tag == "Car")
         {
-            insideCarA  rea = false;
+            insideCarArea = false;
         }
     }
 

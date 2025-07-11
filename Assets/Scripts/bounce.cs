@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class bounce : MonoBehaviour
 {
-    public float bounceF = 6f;
+    public float bounceF = 45f;
 
     private void OnTriggerEnter(Collider other)
     {
