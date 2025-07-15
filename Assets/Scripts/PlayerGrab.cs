@@ -7,7 +7,7 @@ public class PlayerGrab : MonoBehaviour
 {
     public bool getBattery = false;
     public bool insideCarArea = false;
-    private int batteryNum = 0;
+    public int batteryNum = 0;
    
     
     private void OnTriggerEnter(Collider other)

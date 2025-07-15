@@ -10,7 +10,7 @@ public class grabCoin : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
             coinNumber++;
             print(coinNumber);
         }
