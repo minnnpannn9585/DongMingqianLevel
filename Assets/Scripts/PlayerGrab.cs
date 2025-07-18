@@ -6,17 +6,13 @@ using UnityEngine.UI;
 
 public class PlayerGrab : MonoBehaviour
 {
-    /*public diary diary;*/
+    //public diary diary;
     public bool getBattery = false;
     public bool insideCarArea = false;
     public int batteryNum = 0;
-
-    /*public bool isPlayerInDiary = false;*/
-
-    void Update()
-    {
-        
-    }
+    //public bool isPlayerInDiary = false;
+    public GameObject diaryBox;
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Battery")
@@ -26,11 +22,14 @@ public class PlayerGrab : MonoBehaviour
             batteryNum++;
         }
 
-        /*if (other.tag == "Diary")
+        if (other.tag == "Diary")
         {
-            Destroy(other.transform.parent.gameObject);
-            isPlayerInDiary = true;
-        }*/
+            diaryBox.SetActive(true);
+            
+            diaryBox.transform.GetChild(0).GetComponent<Text>().text = other.GetComponent<diary>().diaryText;
+            
+            Destroy(other.transform.gameObject);
+        }
 
 
         if (other.tag == "Car")
