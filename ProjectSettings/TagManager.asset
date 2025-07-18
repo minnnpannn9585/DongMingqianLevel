@@ -9,6 +9,7 @@ TagManager:
   - Car
   - Bounce
   - Coin
+  - Diary
   layers:
   - Default
   - TransparentFX

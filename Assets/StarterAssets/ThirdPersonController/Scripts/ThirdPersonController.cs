@@ -19,6 +19,7 @@ namespace StarterAssets
     {
         private int jumpCount = 0;
         private bool bounce = false;
+        public int bounceH = 0;
             
         [Header("Player")]
         [Tooltip("Move speed of the character in m/s")]
@@ -387,7 +388,7 @@ namespace StarterAssets
                 StartCoroutine(BounceSet());
                 
                 //print(jumpCount);
-                _verticalVelocity = Mathf.Sqrt(JumpHeight * -8f * Gravity);
+                _verticalVelocity = Mathf.Sqrt(JumpHeight * bounceH * Gravity);
             }
         }
 
