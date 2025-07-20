@@ -5,12 +5,21 @@ using UnityEngine;
 
 public class DiaryUI : MonoBehaviour
 {
+    public float counter =2f;
+
     private void Update()
     {
-        if (Input.anyKeyDown)
+        counter -= Time.deltaTime;
+
+        if (counter < 0)
         {
-            CloseUI();
+            if (Input.anyKeyDown)
+            {
+                CloseUI();
+            }
         }
+        
+
     }
 
     public void CloseUI()

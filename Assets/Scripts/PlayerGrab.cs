@@ -2,17 +2,31 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class PlayerGrab : MonoBehaviour
 {
-    //public diary diary;
+    private Camera cam;
+    [SerializeField]
+    private float distance = 3f;
+    
+    
     public bool getBattery = false;
     public bool insideCarArea = false;
     public int batteryNum = 0;
-    //public bool isPlayerInDiary = false;
+   
     public GameObject diaryBox;
-    
+
+    private void Start()
+    {
+        cam = GetComponent<PlayerInput>().camera;
+    }
+    void Update()
+    {
+        Ray ray = new Ray(cam.transform.position, cam.transform.forward);
+        Debug.DrawRay(ray.origin,ray.direction *  distance);
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Battery")
