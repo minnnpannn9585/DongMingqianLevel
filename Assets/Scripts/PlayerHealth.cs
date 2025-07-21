@@ -57,8 +57,10 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        //print(health);
         health -= damage;
         lerpTimer = 0f;
+        //print(health);
     }
 
     public void RestoreHealth(float healAmount)

@@ -10,6 +10,7 @@ TagManager:
   - Bounce
   - Coin
   - Diary
+  - Ground
   layers:
   - Default
   - TransparentFX
