@@ -13,11 +13,12 @@ public class Car : MonoBehaviour
     {
         if (playerGrab.batteryNum == 2 && Input.GetKeyDown(KeyCode.E) && playerGrab.insideCarArea)
         {
+            print(11111111111);
             ePressed = true;
         }
         if (ePressed)
         {
-            transform.parent.position += new Vector3(0.01f, 0, 0);
+            transform.position += new Vector3(-0.01f, 0, 0);
         }
     }
 }

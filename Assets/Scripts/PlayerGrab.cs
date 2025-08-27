@@ -31,16 +31,17 @@ public class PlayerGrab : MonoBehaviour
     {
         if (other.tag == "Battery")
         {
-            Destroy(other.transform.parent.gameObject);
+            Destroy(other.gameObject);
             getBattery = true;
             batteryNum++;
+            print(batteryNum);
         }
 
         if (other.tag == "Diary")
         {
             diaryBox.SetActive(true);
             
-            diaryBox.transform.GetChild(0).GetComponent<Text>().text = other.GetComponent<diary>().diaryText;
+            //diaryBox.transform.GetChild(0).GetComponent<Text>().text = other.GetComponent<Diary>().diaryText;
             
             Destroy(other.transform.gameObject);
         }
@@ -48,6 +49,7 @@ public class PlayerGrab : MonoBehaviour
 
         if (other.tag == "Car")
         {
+            print(222222222222222222);
             insideCarArea = true;
         }
     }
