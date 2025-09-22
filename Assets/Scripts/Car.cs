@@ -15,6 +15,9 @@ public class Car : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        counter -= Time .deltaTime;
+        if (counter < 0) {DialoguePanel.SetActive(false);CarNotification.SetActive(false);}
+        
         if (playerGrab.batteryNum == 2 && Input.GetKeyDown(KeyCode.E) && playerGrab.insideCarArea)
         {
             print(11111111111);
@@ -24,8 +27,8 @@ public class Car : MonoBehaviour
         {
             DialoguePanel.SetActive(true);
             CarNotification.SetActive(true);
-            counter -= Time .deltaTime;
-            if (counter < 0) {DialoguePanel.SetActive(false);CarNotification.SetActive(false);}
+            counter = 1.5f;
+            
         }
         if (ePressed)
         {
