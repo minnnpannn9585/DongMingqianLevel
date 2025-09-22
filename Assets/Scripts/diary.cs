@@ -10,6 +10,7 @@ public class Diary : MonoBehaviour
 
     public GameObject diaryPanel;
     public GameObject diaryText;
+    public GameObject PlayerUI;
 
     void OnTriggerEnter(Collider other)
     {
@@ -17,6 +18,7 @@ public class Diary : MonoBehaviour
         {
             diaryPanel.SetActive(true);
             diaryText.SetActive(true);
+            PlayerUI.SetActive(false);
 
         }
     }
@@ -27,6 +29,7 @@ public class Diary : MonoBehaviour
             
             diaryPanel.SetActive(false);
             diaryText.SetActive(false);
+            PlayerUI.SetActive(true);
         }
     }
 

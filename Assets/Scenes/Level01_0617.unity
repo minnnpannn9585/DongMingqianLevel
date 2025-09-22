@@ -2386,7 +2386,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &142997498
 Transform:
   m_ObjectHideFlags: 0
@@ -4125,7 +4125,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &237303447
 Transform:
   m_ObjectHideFlags: 0
@@ -6017,10 +6017,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f15d2cfeb9c1421b8c33806d041716a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distance: 3
   getBattery: 0
   insideCarArea: 0
-  getCoin: 0
-  coinNumber: 0
+  batteryNum: 0
+  diaryBox: {fileID: 0}
 --- !u!1 &383372406
 GameObject:
   m_ObjectHideFlags: 0
@@ -8211,7 +8212,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &496662323
 Transform:
   m_ObjectHideFlags: 0
@@ -8631,7 +8632,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &512410946
 Transform:
   m_ObjectHideFlags: 0
@@ -11961,7 +11962,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &775051772
 Transform:
   m_ObjectHideFlags: 0
@@ -13297,7 +13298,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &885295764
 Transform:
   m_ObjectHideFlags: 0
@@ -15603,7 +15604,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1078540875
 Transform:
   m_ObjectHideFlags: 0
@@ -24070,7 +24071,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1560620959
 Transform:
   m_ObjectHideFlags: 0
@@ -29742,6 +29743,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerGrab: {fileID: 382287495}
+  DialoguePanel: {fileID: 0}
+  CarNotification: {fileID: 0}
 --- !u!1 &2043618696
 GameObject:
   m_ObjectHideFlags: 0

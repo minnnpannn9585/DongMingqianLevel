@@ -14181,7 +14181,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &657906514
 Transform:
   m_ObjectHideFlags: 0
@@ -23070,6 +23070,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerGrab: {fileID: 245955231}
+  DialoguePanel: {fileID: 0}
+  CarNotification: {fileID: 0}
 --- !u!1 &1036967412
 GameObject:
   m_ObjectHideFlags: 0
@@ -42739,7 +42741,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 467f9c0841a530246b63f7bfc6804f83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diaryText: HAHAHAHAHA
+  diaryPanel: {fileID: 0}
+  diaryText: {fileID: 0}
+  PlayerUI: {fileID: 0}
 --- !u!1001 &1957740454
 PrefabInstance:
   m_ObjectHideFlags: 0
